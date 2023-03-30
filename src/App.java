@@ -7,12 +7,8 @@ import java.util.Map;
 public class App {
   public static void main(String[] args) throws Exception {
 
-    // String api_key = System.getenv("NASA_API_KEY");
-    // String url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key
-    // + "&start_date=2022-06-12&end_date=2022-06-14";
-    // ExtratorConteudo extrator = new ExtratorConteudoNasa();
-
-    API api = API.IMDB_TOP_MOVIES;
+    // API api = API.IMDB_TOP_MOVIES;
+    API api = API.NASA_APOD;
 
     String url = api.getUrl();
     ExtratorConteudo extrator = api.getExtrator();
