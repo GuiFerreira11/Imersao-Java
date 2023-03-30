@@ -7,15 +7,15 @@ import java.util.Map;
 public class App {
   public static void main(String[] args) throws Exception {
 
-    String api_key = System.getenv("NASA_API_KEY");
+    // String api_key = System.getenv("NASA_API_KEY");
+    // String url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key
+    // + "&start_date=2022-06-12&end_date=2022-06-14";
+    // ExtratorConteudo extrator = new ExtratorConteudoNasa();
 
-    String url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key
-        + "&start_date=2022-06-12&end_date=2022-06-14";
-    ExtratorConteudo extrator = new ExtratorConteudoNasa();
+    API api = API.IMDB_TOP_MOVIES;
 
-    // String url =
-    // "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
-    // ExtratorConteudo extrator = new ExtratorConteudoImdb();
+    String url = api.getUrl();
+    ExtratorConteudo extrator = api.getExtrator();
 
     var http = new ClienteHttp();
     String dados = http.buscaDados(url);
@@ -31,8 +31,8 @@ public class App {
 
       Conteudo conteudo = conteudos.get(i);
 
-      String titulo = conteudo.getTitulo();
-      String urlImagem = conteudo.getUrlImagem();
+      String titulo = conteudo.titulo();
+      String urlImagem = conteudo.urlImagem();
 
       // float classificacao = Float.parseFloat(imdbrating);
       // int totalEstrelas = Math.round(classificacao);
