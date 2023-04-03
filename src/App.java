@@ -8,10 +8,12 @@ public class App {
   public static void main(String[] args) throws Exception {
 
     // API api = API.IMDB_TOP_MOVIES;
-    API api = API.NASA_APOD;
+    // API api = API.NASA_APOD;
 
-    String url = api.getUrl();
-    ExtratorConteudo extrator = api.getExtrator();
+    // String url = api.getUrl();
+    // ExtratorConteudo extrator = api.getExtrator();
+    String url = "http://localhost:8080/linguagens";
+    ExtratorConteudo extrator = new ExtratorConteudoImdb();
 
     var http = new ClienteHttp();
     String dados = http.buscaDados(url);
@@ -23,7 +25,7 @@ public class App {
     var diretorio = new File("figurinhas/");
     diretorio.mkdir();
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 2; i++) {
 
       Conteudo conteudo = conteudos.get(i);
 
