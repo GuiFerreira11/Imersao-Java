@@ -12,7 +12,7 @@ public class App {
 
     // String url = api.getUrl();
     // ExtratorConteudo extrator = api.getExtrator();
-    String url = "http://localhost:8080/linguagens";
+    String url = "https://imersao-java-gui.fly.dev/linguagens";
     ExtratorConteudo extrator = new ExtratorConteudoImdb();
 
     var http = new ClienteHttp();
@@ -25,7 +25,7 @@ public class App {
     var diretorio = new File("figurinhas/");
     diretorio.mkdir();
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 5; i++) {
 
       Conteudo conteudo = conteudos.get(i);
 
